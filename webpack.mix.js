@@ -33,7 +33,7 @@ mix.disableNotifications()
                 }
             }
         ],
-        proxy: '127.0.0.1:8080',
+        proxy: '127.0.0.1:80',
         notify: false,
         open: false
     });
