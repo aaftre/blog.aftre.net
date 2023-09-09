@@ -1,0 +1,36 @@
+version: '3.7'
+services:
+
+    blog:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+
+        stdin_open: true # docker run -i
+        tty: true        # docker run -t
+
+        volumes:
+            - ./docker/local/nginx.conf:/etc/nginx/nginx.conf
+            - ./docker/local/nginx.http.conf:/etc/nginx/conf.d/nginx.http.conf
+            - ./docker/local/nginx.https.conf:/etc/nginx/conf.d/nginx.https.conf
+            - ./docker/local/ssl-params.conf:/etc/nginx/ssl-params.conf
+            - ./docker/local/dhparam.pem:/etc/nginx/dhparam.pem
+            - ./docker/local/nginx-selfsigned.crt:/etc/nginx/nginx-selfsigned.crt
+            - ./docker/local/nginx-selfsigned.key:/etc/nginx/nginx-selfsigned.key
+            - ./docker/local/php.ini:/usr/local/etc/php/php.ini
+            - ./:/app
+
+        ports:
+            - "80:80"
+            - "443:443"
+            - "3000:3000"
+            - "3001:3001"
+            - "8080:8080"
+
+
+# docker run --rm --interactive --tty --volume $PWD:/app blog-blog composer create-project aschmelyun/cleaver blog
+# npm install && npm run dev
+
+# npm run dev
+# npm run watch
+# npm run production
