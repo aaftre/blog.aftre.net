@@ -10,7 +10,7 @@ module.exports = {
             '2xl': ['32px', {
                 lineHeight: '39px',
                 letterSpacing: '-0.01em',
-                fontWeight: '800',
+                fontWeight: '700',
             }],
             '3xl': ['1.875rem', {
                 lineHeight: '2.25rem',
