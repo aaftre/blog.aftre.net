@@ -1,7 +1,8 @@
 {
     "view": "layout.post",
     "path": "/post-1",
-    "title": "post-1",
+    "title": "The 2030 Self-Driving Car Bet",
+    "date": "2023-09-09",
     "description": "post-1 Creating a project with Cleaver takes less than 5 minutes using Composer and NPM, and your sites are built in milliseconds.",
     "imports": "/data/example.json",
     "sections": [

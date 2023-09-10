@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
-@include('partials.head')
+@include('partials.header')
 <body class="{{ $bodyClasses ?? '' }}">
 <div class="intro intro-header font-sans">
     <div class="container mx-auto text-center pt-4">

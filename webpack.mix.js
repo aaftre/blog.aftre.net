@@ -30,6 +30,8 @@ mix.disableNotifications()
                     command.run('php cleaver build', (error, stdout, stderr) => {
                         console.log(error ? stderr : stdout);
                     });
+
+                    this.reload();
                 }
             }
         ],

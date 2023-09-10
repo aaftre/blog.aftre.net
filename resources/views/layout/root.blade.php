@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <body class="{{ $bodyClasses ?? '' }}">
-<pre>
 
-@foreach($cleaver as $post)
-    {{!! 
-    print("ADriaaan");
-    print_r($post); 
-    print("ADriaaan2");
-    !!}}
-@endforeach
+@include('partials.header')
 
-</pre>
-
-<div class="container mx-auto py-6 md:py-12 flex">
-    <div style="flex: 4">
-        <main class="px-6 md:px-0">
-            <header class="width-100 border-b-2 mb-8 pb-4">
-                <h1 class="text-3xl md:text-4xl font-thin text-gray-900 leading-snug">UnWelcome <span class="text-pink-600 text-sm font-semibold">V1.5.7</span></h1>
-                <h3 class="text-base md:text-lg text-gray-700">A quick start guide for installing and using Cleaver.</h3>
-            </header>
-                <section class="text-gray-700 leading-relaxed mb-12" id="{{ $section->slug }}">
-                    <h2 class="block text-2xl font-semibold mb-2 text-gray-900">{{ $title }}</h2>
-                            <p class="my-6">{!! $body !!}</p>
-                </section>
-        </main>
+<div class="md:flex-row md:flex-wrap md:flex-border-2 border-green-500 md:mx-auto max-w-3xl object-top flex">
+    <div class="border-2 border-yellow-500 w-full h-28">
+        asdas
     </div>
 </div>
+
+<div class="md:flex-row md:flex-wrap md:flex-border-2 border-green-500 md:mx-auto max-w-3xl object-top flex">
+
+    <div class="flex-initial border-2 border-violet-500 w-1/4">
+        <span>Resources</span>
+    </div>
+
+    <div class="border-2 border-pink-500 bg-lime-500 w-3/4"> 
+    @foreach($cleaver as $post)
+        @if($post->path == '/') @continue @endif
+
+        <p class="text-3xs md:text-base">{!! $post->date !!}</p> 
+        <a class="text-xl" href="{!! $post->path !!}">{!! $post->title !!}</a>
+        <div>
+        {!! $post->description !!}
+        </div>
+    @endforeach
+    </div>
+</div>
+
 @include('partials.footer')
+
 </body>
 </html>
