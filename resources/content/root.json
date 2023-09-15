@@ -1,5 +1,5 @@
 {
     "view": "layout.root",
     "path": "/",
-    "post_ids": [ 1, 2 ]
+    "post_ids": [ 1 ]
 }

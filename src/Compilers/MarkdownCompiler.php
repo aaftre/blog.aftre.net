@@ -43,14 +43,24 @@ class MarkdownCompiler extends Compiler
             ) {
                 $json->{$idx} = json_decode(file_get_contents(FileEngine::$resourceDir . $item));
             }
-
         }
 
         $body = explode('---', $markdown, 3);
+        $body = end($body);
+        /*
+        *   Extract title from markdown
+        */
+        $pattern = '/^#\s+(.+)$/m';
+        
+        if (preg_match($pattern, $body, $matches)) 
+        {
+            $json->title = $matches[1];
+            $body = preg_replace($pattern, '', $body);
+        }    
+
         $parsedown = new \ParsedownExtra();
-        $json->body = $parsedown->text(end($body));
+        $json->body = $parsedown->text($body);
 
         return $json;
     }
-
 }

@@ -1,0 +1,78 @@
+::selection {
+	color: #222;
+	background: #D6EDFF;
+	text-shadow: none;
+}
+
+img[alt~="exxxample"] {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+code[class^="language-"] {
+    padding: 5px;
+}
+
+article > ul {
+    list-style-type:disc;
+    line-height: 27px;
+    color: rgb(60, 60, 60);
+    margin-left: 50px;
+    margin-right: 30px;
+}
+
+article > * {
+	font-family: "Open Sans";
+    color: #3A4145;
+}
+
+article > h1, h1.title {
+    font-size: 32px;
+    line-height: 39px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    margin-bottom:27px;
+    margin-top: -5px;
+    color:rgb(34,34,34);
+}
+
+article > h2 {
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    margin-bottom:10px;
+    margin-top: 37px;
+}
+
+article > ul {
+    margin-bottom:10px;
+    margin-top: 10px;
+}
+
+article > p {
+    font-size: 17px; 
+    margin-top: 10px;
+    margin-bottom: 27px;
+}
+
+article > pre {
+    margin-top: 27px;
+    margin-bottom: 27px;
+    -moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 1.6em 0 1.6em;
+	padding: 0 0 0 1.6em;
+	border-left: #edece4 0.4em solid;
+}
+
+article > blockquote {
+    margin-top: 27px;
+    margin-bottom: 27px;
+    -moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 1.6em 0 1.6em;
+	padding: 0 0 0 1.6em;
+	border-left: #edece4 0.4em solid;
+}
