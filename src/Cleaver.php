@@ -65,7 +65,5 @@ class Cleaver
         $this->buildTime['end'] = microtime(true);
 
         $console->end($this->buildTime);
-
     }
-
 }

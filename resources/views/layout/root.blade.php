@@ -12,7 +12,7 @@
     @foreach($post_ids as $post_id)
         @foreach($cleaver as $post)
             @if($post->post_id != $post_id) @continue @endif
-            
+
             <article>
                 <header>
                     <span class="text-sm font-body">
