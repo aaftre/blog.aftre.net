@@ -21,6 +21,7 @@ mix.disableNotifications()
         processCssUrls: false
     })
     .version()
+    .copyDirectory('resources/images', 'dist/assets/images')
     .browserSync({
         files: [
             "dist/**/*",

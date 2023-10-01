@@ -1,0 +1,37 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main # Change this to your main branch name
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14 # You can change this to your desired Node.js version
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Production
+        run: npm run production # Replace with your actual build script
+
+      # - name: Create Dist Directory
+      #   run: mkdir dist
+
+      # - name: Copy Artifacts to Dist
+      #   run: cp -r path/to/artifacts/* dist/ # Replace path/to/artifacts with the actual path
+
+      - name: Upload Dist Directory
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: dist

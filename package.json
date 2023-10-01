@@ -13,6 +13,7 @@
         "autoprefixer": "^10.4.15",
         "browser-sync": "^2.29.3",
         "browser-sync-webpack-plugin": "^2.3.0",
+        "highlight.js": "^11.8.0",
         "jquery": "^3.7.1",
         "lodash": "^4.17.21",
         "mix-tailwindcss": "^1.3.0",
