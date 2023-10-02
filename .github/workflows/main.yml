@@ -18,11 +18,20 @@ jobs:
         with:
           node-version: 20
 
-      # - name: Create Directory for GitHub Pages
-      #   run: mkdir gh-pages
+      - name: Validate Composer
+        run: |
+          composer validate
 
-      # - name: Copy Artifacts to GitHub Pages Directory
-      #   run: cp -r dist/* gh-pages/ # Replace path/to/artifacts with the actual path
+      - name: Install composer dependencies
+        run: |
+          composer install --optimize-autoloader --prefer-dist --no-progress --no-suggest
+          composer dump-autoload
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Production
+        run: npm run production
 
       - name: Config Git
         run: |
@@ -33,16 +42,10 @@ jobs:
         run: |
           git checkout --orphan gh-pages
           git reset --hard
-          git clean -df
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build Production
-        run: npm run production
 
       - name: Push to Github
         run: |
-          git add .
+          git add dist
           git commit -m "Publish artifacts to GitHub Pages"
+          git clean -df
           git push -f origin gh-pages
