@@ -30,8 +30,26 @@ jobs:
       # - name: Copy Artifacts to Dist
       #   run: cp -r path/to/artifacts/* dist/ # Replace path/to/artifacts with the actual path
 
-      - name: Upload Dist Directory
-        uses: actions/upload-artifact@v2
-        with:
-          name: dist
-          path: dist
+      # - name: Upload Dist Directory
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: dist
+      #     path: dist
+
+      - name: Create Directory for GitHub Pages
+        run: mkdir gh-pages
+
+      - name: Copy Artifacts to GitHub Pages Directory
+        run: cp -r dist/* gh-pages/ # Replace path/to/artifacts with the actual path
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git checkout --orphan gh-pages
+          git reset --hard
+          git clean -df
+          cp -r gh-pages/* ./
+          git add .
+          git commit -m "Publish artifacts to GitHub Pages"
+          git push -f origin gh-pages
