@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main # Change this to your main branch name
+      - main
 
 jobs:
   build-and-deploy:
@@ -16,41 +16,33 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 20 # You can change this to your desired Node.js version
+          node-version: 20
+
+      # - name: Create Directory for GitHub Pages
+      #   run: mkdir gh-pages
+
+      # - name: Copy Artifacts to GitHub Pages Directory
+      #   run: cp -r dist/* gh-pages/ # Replace path/to/artifacts with the actual path
+
+      - name: Config Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      - name: Checkout gh-pages
+        run: |
+          git checkout --orphan gh-pages
+          git reset --hard
+          git clean -df
 
       - name: Install Dependencies
         run: npm install
 
       - name: Build Production
-        run: npm run production # Replace with your actual build script
+        run: npm run production
 
-      # - name: Create Dist Directory
-      #   run: mkdir dist
-
-      # - name: Copy Artifacts to Dist
-      #   run: cp -r path/to/artifacts/* dist/ # Replace path/to/artifacts with the actual path
-
-      # - name: Upload Dist Directory
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: dist
-      #     path: dist
-
-      - name: Create Directory for GitHub Pages
-        run: mkdir gh-pages
-
-      - name: Copy Artifacts to GitHub Pages Directory
-        run: cp -r dist/* gh-pages/ # Replace path/to/artifacts with the actual path
-
-      - name: Deploy to GitHub Pages
+      - name: Push to Github
         run: |
-          git stash
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git checkout --orphan gh-pages
-          git reset --hard
-          git clean -df
-          git stash pop
           git add .
           git commit -m "Publish artifacts to GitHub Pages"
           git push -f origin gh-pages
