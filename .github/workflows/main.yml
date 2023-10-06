@@ -46,13 +46,13 @@ jobs:
       - name: Build Production
         run: npm run production
 
-      - name: Create .nojekyll File
+      - name: Copy .nojekyll File
         run: |
-          touch dist/.nojekyll
+          cp .nojekyll dist/.nojekyll
 
       - name: Add _config.yml File
         run: |
-          mv _config.yml dist/
+          cp _config.yml dist/
 
       - name: Move 'dist' to $RUNNER_TEMP
         run: |
