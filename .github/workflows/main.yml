@@ -50,10 +50,6 @@ jobs:
         run: |
           cp .nojekyll dist/.nojekyll
 
-      - name: Add _config.yml File
-        run: |
-          cp _config.yml dist/
-
       - name: Move 'dist' to $RUNNER_TEMP
         run: |
           mv dist $RUNNER_TEMP
