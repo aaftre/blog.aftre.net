@@ -17,7 +17,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.blog.aftre.net/gh-pages }}
+          token: ${{ secrets.BLOG_AFTRE_NET_GHPAGES }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
