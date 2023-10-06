@@ -16,8 +16,6 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.BLOG_AFTRE_NET_GHPAGES }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
