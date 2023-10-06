@@ -46,10 +46,6 @@ jobs:
       - name: Build Production
         run: npm run production
 
-      - name: Copy .nojekyll File
-        run: |
-          cp .nojekyll dist/.nojekyll
-
       - name: Move 'dist' to $RUNNER_TEMP
         run: |
           mv dist $RUNNER_TEMP
@@ -72,6 +68,10 @@ jobs:
             mv "$file" .
           done
         working-directory: ${{ github.workspace }}
+
+      - name: Touch .nojekyll File
+        run: |
+          touch .nojekyll
 
       - name: Push to Github
         run: |
