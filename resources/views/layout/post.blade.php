@@ -22,7 +22,12 @@
             {!! $body !!}
         </article> 
         <hr class="my-16 text-[color:rgb(128,128,128)]">
+
+        <h2 class="title">More Posts</h2>
+        @include('partials.posts-section')
     </main>
+
+    <footer class="float-right w-[700px] h-[100px]"></footer>
 </div>
 
 @include('partials.footer')

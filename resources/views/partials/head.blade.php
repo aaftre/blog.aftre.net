@@ -1,6 +1,8 @@
 <head>
     <title>{{ $title }} Turing Complete, Mostly</title>
     <link rel="stylesheet" type="text/css" href="{{ $mix['/assets/css/app.css'] }}">
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles-dark.css">
+
     <link href="https://fonts.googleapis.com/css?family=Fira+Code:400|Nunito:700|Open+Sans:400,600,700" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">

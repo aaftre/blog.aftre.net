@@ -3,6 +3,7 @@ post_id: 4
 view: layout.post
 path: /post-4
 date: 2016-11-02
+posts_section: [ 6, 5, 4, 3, 2, 1 ]
 ---
 
 # The Path to Solder Reflow

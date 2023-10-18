@@ -14,6 +14,8 @@ mix.disableNotifications()
     })
     .setPublicPath('./')
     .js('resources/assets/js/app.js', 'dist/assets/js')
+    .css('resources/assets/css/styles-light.css', 'dist/assets/css')
+    .css('resources/assets/css/styles-dark.css', 'dist/assets/css')
     .postCss('resources/assets/css/app.css', 'dist/assets/css', [
         require('tailwindcss')
     ])

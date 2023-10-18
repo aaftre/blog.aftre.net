@@ -3,6 +3,7 @@ post_id: 1
 view: layout.post
 path: /post-1
 date: 2015-11-18
+posts_section: [ 6, 5, 4, 3, 2, 1 ]
 ---
 
 # How to save 13¢ per day

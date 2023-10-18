@@ -3,6 +3,7 @@ post_id: 3
 view: layout.post
 path: /post-3
 date: 2016-10-31
+posts_section: [ 6, 5, 4, 3, 2, 1 ]
 ---
 
 # What the Tic Tac?

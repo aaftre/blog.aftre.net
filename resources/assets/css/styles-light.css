@@ -96,7 +96,7 @@ article > pre {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	margin: 1.6em 0 1.6em;
-	padding: 0 0 0 1.6em;
+	/*padding: 0 0 0 1.6em;*/
 	border-left: #edece4 0.4em solid;
 }
 
@@ -108,4 +108,18 @@ article > blockquote {
 	margin: 1.6em 0 1.6em;
 	padding: 0 0 0 1.6em;
 	border-left: #edece4 0.4em solid;
+}
+
+hr {
+	height: 1px;
+	background-color: rgb(128,128,128);
+	border: none;
+}
+
+article time {
+	color: rgb(158,171,179);
+}
+
+header h2 {
+	color: rgb(34,34,34);
 }

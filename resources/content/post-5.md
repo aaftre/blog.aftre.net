@@ -3,6 +3,7 @@ post_id: 5
 view: layout.post
 path: /post-5
 date: 2018-09-07
+posts_section: [ 6, 5, 4, 3, 2, 1 ]
 ---
 
 # Trilemmic Paradigms as Applied to Forced Induction
