@@ -37,7 +37,7 @@ jobs:
 
       - name: Install composer dependencies
         run: |
-          composer install --optimize-autoloader --prefer-dist --no-progress --no-suggest
+          composer install
           composer dump-autoload
 
       - name: Install Dependencies
@@ -48,6 +48,7 @@ jobs:
 
       - name: Move 'dist' to $RUNNER_TEMP
         run: |
+          cat src/Compilers/MarkdownCompiler.php
           ls -lahR dist
           mv dist $RUNNER_TEMP
         working-directory: ${{ github.workspace }}
