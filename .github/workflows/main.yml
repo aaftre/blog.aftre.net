@@ -48,6 +48,7 @@ jobs:
 
       - name: Move 'dist' to $RUNNER_TEMP
         run: |
+          ls -lahR dist
           mv dist $RUNNER_TEMP
         working-directory: ${{ github.workspace }}
 
@@ -65,7 +66,7 @@ jobs:
       - name: Move files back to current directory
         run: |
           for file in $RUNNER_TEMP/dist/*; do
-            mv "$file" .
+            mv -v "$file" .
           done
         working-directory: ${{ github.workspace }}
 
