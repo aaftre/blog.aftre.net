@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a7c347bdd211e390633ac3910b05131b",
+    "content-hash": "d166e783baa412c112d0f7fa5d752b8e",
     "packages": [
         {
             "name": "aschmelyun/laravel-blade",
@@ -4770,7 +4770,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.2.5",
+        "php": "^8.1.23",
         "ext-json": "*"
     },
     "platform-dev": [],
