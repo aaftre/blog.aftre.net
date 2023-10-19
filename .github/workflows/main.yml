@@ -31,6 +31,12 @@ jobs:
         with:
           node-version: 20
 
+      - name: Setup PHP with PECL extension
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1.23'
+          # extensions: imagick, swoole
+
       - name: Validate Composer
         run: |
           composer validate
@@ -48,7 +54,6 @@ jobs:
 
       - name: Move 'dist' to $RUNNER_TEMP
         run: |
-          cat src/Compilers/MarkdownCompiler.php
           ls -lahR dist
           mv dist $RUNNER_TEMP
         working-directory: ${{ github.workspace }}
