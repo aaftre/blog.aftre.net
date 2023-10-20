@@ -1,12 +1,3 @@
-/*
-TODO: 
-	- add {#testid .testclass} to images and videos
-    - code expand
-	- listing of posts
-	- crop images  
-    - cicd / hosting
-*/
-
 body {
 	background-color: rgb(255, 255, 255);
 	/*background-image: linear-gradient(160deg, rgb(66, 21, 26) 0%, rgb(18, 18, 34) 25%, rgb(23, 24, 25) 79%);*/
