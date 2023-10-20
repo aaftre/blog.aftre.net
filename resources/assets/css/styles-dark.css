@@ -1,6 +1,6 @@
 body {
-	/*background-color: rgb(0, 0, 0);*/
-	background-image: linear-gradient(160deg, rgb(66, 21, 26) 0%, rgb(18, 18, 34) 25%, rgb(23, 24, 25) 79%);
+	background-color: rgb(0, 0, 0);
+	/*background-image: linear-gradient(160deg, rgb(66, 21, 26) 0%, rgb(18, 18, 34) 25%, rgb(23, 24, 25) 79%);*/
 }
 
 ::selection {
@@ -241,19 +241,19 @@ aside .inline-block a:hover {
 	padding: 0;
 }
 
-li:before {
+article li:before {
 	margin-right: 10px;
 	content: counter(item);
 }
 
-ol {
+article ol {
 	list-style: none;
 	counter-reset: item;
 	margin-left: 10px;
 	margin-bottom: 27px;
 }
 
-li {
+article li {
 	counter-increment: item;
 	margin-bottom: 5px;
 }
