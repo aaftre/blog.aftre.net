@@ -10,17 +10,24 @@ posts_section: [ 6, 5, 4, 3, 2, 1 ]
 
 For many years I would enjoy working through various diverse projects (setting up routers and firewalls, a NAS, an eggdrop bot etc...).  I would finish the project and maybe need to come back to it some time later finding that I have forgotten key details about the implementation.  With no documentation to refresh my memory revisiting projects was arduous.
 
-Keeping a blog seems like one way to fill this requirement.
+> Keeping a blog seems like one way to fill this requirement.
 
 Personally I wouldn't be one for a blogging platform. I'd like to retain some control over content, design and avoid platform/vendor lockin. Three separate but related philosophies generally drive my approach to projects; minimal viable product, suckless and the unix philosophy. And also cheapness.
 
 Initially I attempted to use a a $1 FreeBSD server which I maintained on atlantic.net.  It already hosted OpenVPN that I used as an endpoint for Netflix traffic/content. At the time wordpress was the blogging standard and $1 got you 256MB of memory.  Cramming FreeBSD, OpenVPN, PHP-FPM, nginx, and MySQL into such a limited memory footprint proved a tad unstable.  The database was really the killer.  Most wordpress sites should not only really be read only, but also static sites.
 
-The above afformentioned reasons also prevented me from using a managed service.  I'd like to keep this as simple as possible.  Somewhat of a contradiction to the unfortunate direction of modern day web development.  I explored several options.  Being fairly vendor/brand agnostic I looked for a platform that was 1) a static site generator 2) had no database dependancy 3) was written in PHP as I have PHP experience and 4) used blade templates.  Without a database content can be stored in markdown.  I still want the ability to post media such as photos, videos, and pdfs on my blog.  [Jamstack](https://jamstack.org/generators/) provides a convenient interface to compare static site generators. 
+The above afformentioned reasons also prevented me from using a managed service.  I'd like to keep this as simple as possible.  Somewhat of a contradiction to the unfortunate direction of modern day web development.  I explored several options.  Being fairly vendor/brand agnostic I looked for a platform that fulfilled the following criteria; 
+
+1. Is a static site generator.
+2. Has no database dependancy.
+3. Was written in PHP as I have PHP experience.
+4. Uses blade templates.
+
+Without a database content can be stored in markdown.  I still want the ability to post media such as photos, videos, and pdfs on my blog.  [Jamstack](https://jamstack.org/generators/) provides a convenient interface to compare static site generators. 
 
 Cleaver looked like the best option.  A blade template PHP based static site generator.  It also has tailwind built in along with support for Vue and jQuery if you need such things.
 
-Oh yes, FOSS.
+> Oh yes, FOSS.
 
 Cleaver seemed like the best option, but Unfortunately it also seems like abandon ware.  After cloning the repository and following the process documentation results in errors.
 
@@ -72,6 +79,6 @@ Whichever features I need in a simple static site I can then define conventions 
 
 Hosting a static site on Github pages seems natural. Whats more effcient than not hosting your own server platform.  I run Cleaver in a docker container locally and when it is committed and pushed to git, a Github [action](https://github.com/aaftre/blog.aftre.net/blob/main/.github/workflows/main.yml) runs the build and deployment process, which commits the generated content to a new branch - [gh-pages](https://github.com/aaftre/blog.aftre.net/tree/gh-pages).
 
-And voila! a wild blog appears!
+> And voila! a wild blog appears!
 
 The repository lives here; https://github.com/aaftre/blog.aftre.net/ and contains everything needed to run the local docker container using docker-compose, through to the Github action responsible for building the site and publishing the content to Github pages.
