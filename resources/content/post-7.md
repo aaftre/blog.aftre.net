@@ -12,7 +12,7 @@ For many years I would enjoy working through various diverse projects (setting u
 
 > Keeping a blog seems like one way to fill this requirement.
 
-Personally I wouldn't be one for a blogging platform. I'd like to retain some control over content, design and avoid platform/vendor lockin. Three separate but related philosophies generally drive my approach to projects; minimal viable product, suckless and the unix philosophy. And also cheapness.
+Personally I wouldn't be one for a blogging platform. I'd like to retain some control over content, design and avoid platform/vendor lockin. Three separate but related philosophies generally drive my approach to projects; [minimum viable product](https://en.wikipedia.org/wiki/Minimum_viable_product), [suckless philosophy](https://suckless.org/philosophy/) and the [unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy). And also [cheapness](/assets/images/7/1.gif).
 
 Initially I attempted to use a a $1 FreeBSD server which I maintained on atlantic.net.  It already hosted OpenVPN that I used as an endpoint for Netflix traffic/content. At the time wordpress was the blogging standard and $1 got you 256MB of memory.  Cramming FreeBSD, OpenVPN, PHP-FPM, nginx, and MySQL into such a limited memory footprint proved a tad unstable.  The database was really the killer.  Most wordpress sites should not only really be read only, but also static sites.
 
@@ -54,6 +54,8 @@ Node.js v17.9.0
 ```
 
 An existing [issue](https://github.com/aschmelyun/cleaver/issues/65) on Github hasn't been tended to in months.  Fortunately it was a simple fix.  The great thing about FOSS is you can send patches.  So I submitted a [pull request](https://github.com/aschmelyun/cleaver/pull/68/commits)... which also remained disregarded for months.  But at least I'm able to still use the free open software I patched myself.  
+
+![xlimage](/assets/images/7/2.png)
 
 I also took the opportunity to add a feature to the markdown compiler.  In the blade template I wanted the ability to access the title as its own entity.  This would make things more flexible and let me embed the title in an anchor tag.  To do this simply use regex to extract and replace the first level 1 heading occurance and assign the value to a variable in the $json object.
 
