@@ -257,3 +257,13 @@ article li {
 	counter-increment: item;
 	margin-bottom: 5px;
 }
+
+.hide-on-scroll {
+	opacity: 1;
+	transition: opacity 0.3s;
+}
+
+.hide-on-scroll.hide {
+	opacity: 0;
+	transition: opacity 0.7s;
+}

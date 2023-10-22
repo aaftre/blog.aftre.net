@@ -1,4 +1,4 @@
-<aside class="text-right w-[250px] float-left">
+<aside class="hide-on-scroll text-right w-[250px] float-left">
     <a class="" href="/">
         <div class="mb-[30px] ml-[140px] h-[110px] w-[110px]">
             <img src="/assets/images/root/s2.jpg" alt="simian" id="logo">
