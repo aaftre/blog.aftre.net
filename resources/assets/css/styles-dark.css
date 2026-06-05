@@ -178,12 +178,17 @@ aside ul a:hover {
 	transition: 1s filter linear, 1s -webkit-filter linear;
 }
 
-aside #logo:hover {
+/* aside #logo:hover {
 	background-color: #0800ff;
 	padding: 5px;
 	padding-left: 20px;
 	padding-right: 0px;
 	padding-top: 10px;
+} */
+
+aside #logo {
+	border: 3px solid white;
+	border-radius: 100px;
 }
 
 article a:hover,

@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.23.4
 
 WORKDIR /app
 
@@ -8,17 +8,17 @@ RUN apk update
 
 RUN apk add \
     nginx \
-    php81-fpm \
-    php81-curl \
-    php81-iconv \
-    php81-mbstring \
-    php81-openssl \
-    php81-zip \
-    php81-tokenizer \
-    php81-dom \
-    php81-phar \
-    php81-xml \
-    php81-xmlwriter \
+    php84-fpm \
+    php84-curl \
+    php84-iconv \
+    php84-mbstring \
+    php84-openssl \
+    php84-zip \
+    php84-tokenizer \
+    php84-dom \
+    php84-phar \
+    php84-xml \
+    php84-xmlwriter \
     procps \
     npm \
     composer
