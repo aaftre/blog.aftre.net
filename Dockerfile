@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.19
 
 WORKDIR /app
 
@@ -20,10 +20,9 @@ RUN apk add \
     php81-xml \
     php81-xmlwriter \
     procps \
-    npm \
-    composer
+    npm
 
-#RUN ln -s /usr/bin/php8 /usr/bin/php
+RUN ln -s /usr/bin/php81 /usr/bin/php
 
 #COPY docker/prod/php.ini /usr/local/etc/php/php.ini
 #COPY docker/prod/nginx.conf /etc/nginx/nginx.conf
@@ -32,6 +31,11 @@ RUN apk add \
 COPY docker/prod/crontab-root /etc/crontabs/root
 RUN chmod 0644 /etc/crontabs/root
 RUN crontab /etc/crontabs/root
+
+# Install composer manually, pointing at php81
+RUN wget -qO /tmp/composer-setup.php https://getcomposer.org/installer \
+    && php81 /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer \
+    && rm /tmp/composer-setup.php
 
 COPY ./docker/docker-entrypoint.sh /usr/local/sbin/
 RUN chmod +x /usr/local/sbin/docker-entrypoint.sh
