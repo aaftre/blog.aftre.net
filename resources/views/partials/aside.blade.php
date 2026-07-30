@@ -1,7 +1,7 @@
 <aside class="hide-on-scroll text-right w-[250px] float-left">
     <a class="" href="/">
         <div class="mb-[30px] ml-[140px] h-[110px] w-[110px]">
-            <img src="/assets/images/root/adrian.jpg" alt="Adrian Maliszewski" id="logo">
+            @include('partials.puffy')
         </div>
     </a>
 
